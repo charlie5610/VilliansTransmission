@@ -76,12 +76,7 @@
             oldgear = 0;
             
             function synchro(n){
-                switch(oldgear){
-                    case 1:
-                        mesh.children[8].translateZ(-0.01);
-                    case 2:
-                        mesh.children[8].translateZ(0.01);
-                }
+                
                 switch(n){
                     case 1:
                         mesh.children[8].translateZ(0.01);
