@@ -21,8 +21,11 @@
         <div class="slidecontainer">
           <input type="range" min="0" max="3" value="1" step="0.01" class="slider" id="speed"> Speed: <span id="sText" style="color:red">1.00X</span>
         </div>
-            <button class="button" id="show1"\>
+            <button class="button" id="neutral"\>
                 Neutral
+            </button>
+            <button class="button" id="speed1"\>
+                1st Gear
             </button>
           </div>
         </div>
@@ -90,6 +93,24 @@
                 function neutral(){
                     setInterval(neutral1,25);
                 }
+                function speed1run(){
+                    mesh = gltf.getObject3D('mesh');
+                    iS = parseFloat(document.getElementById("speed").value)
+                    iS = iS/4;
+                    mesh.children[10].rotateZ(iS);
+                    mesh.children[9].rotateZ(-iS/4);
+                    mesh.children[5].rotateZ(iS/4*27/45);
+                    mesh.children[0].rotateZ(iS/4*26/34);
+                    mesh.children[2].rotateZ(iS/4);
+                    mesh.children[1].rotateZ(iS/4*39/33);
+                    mesh.children[3].rotateZ(iS/4*40/32);
+                    mesh.children[16].rotateZ(iS/4*26/20);
+                    mesh.children[4].rotateZ(-iS/4*26/30);
+                    mesh.children[12].rotateZ(iS/4*27/45);
+                }
+                function speed1(){
+                    setInterval(speed1,25);
+                }                
                 main.neutral = neutral;
             }
             
@@ -112,7 +133,7 @@
                 document.getElementById("sText").innerHTML = spText()
             }
             
-            function print(){
+            function neutral(){
                 mesh = gltf.getObject3D('mesh');
                 main.neutral();
                 document.getElementById("show1").disabled = true;
@@ -126,7 +147,8 @@
             document.getElementById("speed").addEventListener("input",sChange);
             document.getElementById("hide").addEventListener("click",hide);
             document.getElementById("show").addEventListener("click",show);
-            document.getElementById("show1").addEventListener("click",print);
+            document.getElementById("neutral").addEventListener("click",neutral);
+            document.getElementById("speed1").addEventListener("click",main.speed1());
         </script>
 
     </body>
