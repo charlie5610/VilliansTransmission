@@ -71,7 +71,6 @@
             
             
             function hide(){
-                o = document.getElementById("opacity").value;
                 mesh = gltf.getObject3D('mesh');
                 mesh.children[13].material.visible = false;
                 mesh.children[14].material.visible = false;
@@ -79,7 +78,6 @@
             }
             
             function show(){
-                o = document.getElementById("opacity").value;
                 mesh = gltf.getObject3D('mesh');
                 mesh.children[13].material.visible = true;
                 mesh.children[14].material.visible = true;
