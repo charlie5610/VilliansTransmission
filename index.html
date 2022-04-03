@@ -108,6 +108,7 @@
                     mesh = gltf.getObject3D('mesh');
                     iS = parseFloat(document.getElementById("speed").value)
                     iS = iS/4;
+                    synchro(1);
                     mesh.children[10].rotateZ(iS);
                     mesh.children[9].rotateZ(-iS/4);
                     mesh.children[5].rotateZ(iS/4*27/45);
