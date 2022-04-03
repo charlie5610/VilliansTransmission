@@ -76,9 +76,17 @@
             oldgear = 0;
             
             function synchro(n){
+                switch(oldgear){
+                    case 1:
+                        mesh.children[8].translateZ(-0.01);
+                    case 2:
+                        mesh.children[8].translateZ(0.01);
+                }
                 switch(n){
                     case 1:
                         mesh.children[8].translateZ(0.01);
+                    case 2:
+                        mesh.children[8].translateZ(-0.01);
                 }
                 oldgear = n;
             }
@@ -100,7 +108,8 @@
                 }
                 function neutral(){
                     document.getElementById("speed1").disabled = false;
-                    clearInterval(Interval);
+                    clearInterval(Interval);                    
+                    synchro(0);
                     Interval = setInterval(neutral1,25);
                 }
                 
@@ -128,9 +137,7 @@
                 }  
                 
                 main.neutral = neutral;
-                main.speed1 = speed1;
-                
-                
+                main.speed1 = speed1; 
                 
             }
             
