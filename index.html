@@ -72,9 +72,12 @@
             
             
             function main(){
-                function neutral(){
+                function neutral1(){
                     mesh = gltf.getObject3D('mesh');
-                    mesh.children[10].rotateY(iS);
+                    mesh.children[10].rotateX(iS);
+                }
+                function neutral(){
+                    setInterval(neutral1,25);
                 }
                 main.neutral = neutral;
             }
