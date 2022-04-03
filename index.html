@@ -80,8 +80,6 @@
                 switch(n){
                     case 1:
                         mesh.children[8].translateZ(0.01);
-                    case 2:
-                        mesh.children[8].translateZ(-0.01);
                 }
                 oldgear = n;
             }
@@ -124,10 +122,10 @@
                     mesh.children[11].rotateZ(iS/4*27/45);
                 }
                 function speed1(){
-                    clearInterval(Interval);
-                    synchro(1);
+                    clearInterval(Interval);                    
                     document.getElementById("neutral").disabled = false;
                     document.getElementById("speed1").disabled = true;
+                    synchro(1);
                     Interval = setInterval(speed1run,25);
                 }  
                 
