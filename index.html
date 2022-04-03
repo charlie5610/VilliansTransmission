@@ -73,6 +73,15 @@
             var scene = document.querySelector('a-scene');
             spText = function(){return iS.toFixed(2)+"X"}
             Interval = null;
+            oldgear = 0;
+            
+            function synchro(n){
+                switch(n){
+                    case 1:
+                        mesh.children[8].translateZ(0.01);
+                }
+                oldgear = n;
+            }
             
             function main(){
                 function neutral1(){
