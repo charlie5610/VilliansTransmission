@@ -51,7 +51,7 @@
             gltf = document.querySelector('#bowser-model');
             var scene = document.querySelector('a-scene');
             console.log("test")
-            scene.addEventListener('loaded', function (e) {
+            gltf.addEventListener('loaded', function (e) {
                 mesh = gltf.getObject3D('mesh'); 
                 console.log(mesh); 
             });            
