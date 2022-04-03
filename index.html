@@ -74,6 +74,7 @@
             function main(){
                 function neutral1(){
                     mesh = gltf.getObject3D('mesh');
+                    iS = parseFloat(document.getElementById("speed").value)
                     mesh.children[10].rotateZ(iS);
                 }
                 function neutral(){
