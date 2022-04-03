@@ -76,7 +76,7 @@
             oldgear = 0;
             
             function synchro(n){
-                
+                mesh = gltf.getObject3D('mesh');
                 switch(n){
                     case 1:
                         mesh.children[8].translateZ(0.01);
