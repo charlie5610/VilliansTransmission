@@ -67,11 +67,22 @@
         <script type="text/javascript"> 
             gltf = document.querySelector('#bowser-model');
             var scene = document.querySelector('a-scene');
+            
+            
+            function opac(){
+                o = document.getElementById("opacity").value;
+                mesh = gltf.getObject3D('mesh');
+                mesh.children[13].material.opacity = o;
+                mesh.children[14].material.opacity = o;
+            }
+            
             function print(){
                 mesh = gltf.getObject3D('mesh');
                 console.log(mesh)
                 console.log("test")
             }
+            
+            document.getElementById("opacity").addEventListener("input",opac);
             document.getElementById("show").addEventListener("click",print);
         </script>
 
