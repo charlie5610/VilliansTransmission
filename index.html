@@ -76,6 +76,7 @@
                     mesh = gltf.getObject3D('mesh');
                     mesh.children[10].rotateY(iS);
                 }
+                main.neutral = neautral;
             }
             
             function hide(){
@@ -102,6 +103,8 @@
                 console.log(mesh)
                 console.log("test")
             }
+            
+            main.neutral();
             
             document.getElementById("speed").addEventListener("input",sChange);
             document.getElementById("hide").addEventListener("click",hide);
