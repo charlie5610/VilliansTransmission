@@ -68,7 +68,15 @@
         <script type="text/javascript"> 
             gltf = document.querySelector('#bowser-model');
             var scene = document.querySelector('a-scene');
+            spText = function(){return iS.toFixed(2)+"X"}
             
+            
+            function main(){
+                function neutral(){
+                    mesh = gltf.getObject3D('mesh');
+                    mesh.children[10].rotateY(iS);
+                }
+            }
             
             function hide(){
                 mesh = gltf.getObject3D('mesh');
@@ -84,12 +92,18 @@
                 mesh.children[15].material.visible = true;
             }
             
+            function sChange(){
+                iS = parseFloat(document.getElementById("speed").value)
+                document.getElementById("sText").innerHTML = spText()
+            }
+            
             function print(){
                 mesh = gltf.getObject3D('mesh');
                 console.log(mesh)
                 console.log("test")
             }
             
+            document.getElementById("speed").addEventListener("input",sChange);
             document.getElementById("hide").addEventListener("click",hide);
             document.getElementById("show").addEventListener("click",show);
             document.getElementById("show1").addEventListener("click",print);
