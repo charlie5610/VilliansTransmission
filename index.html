@@ -100,12 +100,13 @@
             
             function print(){
                 mesh = gltf.getObject3D('mesh');
+                main.neutral();
                 console.log(mesh)
                 console.log("test")
             }
             
             main();
-            main.neutral();
+            
             
             document.getElementById("speed").addEventListener("input",sChange);
             document.getElementById("hide").addEventListener("click",hide);
