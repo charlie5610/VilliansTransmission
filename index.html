@@ -22,7 +22,7 @@
           <input type="range" min="0" max="3" value="1" step="0.01" class="slider" id="speed"> Speed: <span id="sText" style="color:red">1.00X</span>
         </div>
             <button class="button" id="show1"\>
-                Show mesh
+                Neutral;
             </button>
           </div>
         </div>
@@ -78,6 +78,8 @@
                     iS = iS/4;
                     mesh.children[10].rotateZ(iS);
                     mesh.children[9].rotateZ(-iS/4);
+                    mesh.children[5].rotateZ(iS/4*27/45);
+                    mesh.children[0].rotateZ(iS/4*26/34);
                 }
                 function neutral(){
                     setInterval(neutral1,25);
