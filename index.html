@@ -72,13 +72,13 @@
             gltf = document.querySelector('#bowser-model');
             var scene = document.querySelector('a-scene');
             spText = function(){return iS.toFixed(2)+"X"}
-            
+            Interval - null;
             
             function main(){
                 function neutral1(){
                     mesh = gltf.getObject3D('mesh');
                     iS = parseFloat(document.getElementById("speed").value)
-                    iS = iS/4;
+                    iS = iS/10;
                     mesh.children[10].rotateZ(iS);
                     mesh.children[9].rotateZ(-iS/4);
                     mesh.children[5].rotateZ(iS/4*27/45);
@@ -88,11 +88,11 @@
                     mesh.children[3].rotateZ(iS/4*40/32);
                     mesh.children[16].rotateZ(iS/4*26/20);
                     mesh.children[4].rotateZ(-iS/4*26/30);
-                    
                 }
                 function neutral(){
-                    setInterval(neutral1,25);
+                    Interval = setInterval(neutral1,25);
                 }
+                
                 function speed1run(){
                     mesh = gltf.getObject3D('mesh');
                     iS = parseFloat(document.getElementById("speed").value)
@@ -109,8 +109,10 @@
                     mesh.children[12].rotateZ(iS/4*27/45);
                 }
                 function speed1(){
-                    setInterval(speed1,25);
-                }                
+                    clearInterval(Interval);
+                    Interval = setInterval(speed1,25);
+                }  
+                
                 main.neutral = neutral;
             }
             
