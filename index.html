@@ -110,6 +110,8 @@
                 }
                 function speed1(){
                     clearInterval(Interval);
+                    document.getElementById("neutral").disabled = false;
+                    document.getElementById("speed1").disabled = true;
                     Interval = setInterval(speed1run,25);
                 }  
                 
