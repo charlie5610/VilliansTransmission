@@ -27,6 +27,9 @@
             <button class="button" id="speed1"\>
                 1st Gear
             </button>
+            <button class="button" id="speed1"\>
+                2nd Gear
+            </button>
           </div>
         </div>
         </div>
@@ -104,7 +107,8 @@
                     mesh.children[4].rotateZ(-iS/4*26/30);
                 }
                 function neutral(){
-                    document.getElementById("speed1").disabled = false;
+                    document.getElementById("speed1").disabled = false;                    
+                    document.getElementById("speed2").disabled = false;
                     clearInterval(Interval);                    
                     synchro(0);
                     Interval = setInterval(neutral1,25);
@@ -133,6 +137,7 @@
                     clearInterval(Interval);                    
                     document.getElementById("neutral").disabled = false;
                     document.getElementById("speed1").disabled = true;
+                    document.getElementById("speed2").disabled = false;
                     synchro(1);
                     Interval = setInterval(speed1run,25);
                 }
@@ -158,7 +163,8 @@
                 function speed2(){
                     clearInterval(Interval);                    
                     document.getElementById("neutral").disabled = false;
-                    document.getElementById("speed1").disabled = true;
+                    document.getElementById("speed1").disabled = false;
+                    document.getElementById("speed2").disabled = true;
                     synchro(2);
                     Interval = setInterval(speed2run,25);
                 } 
