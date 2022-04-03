@@ -62,14 +62,12 @@
             <a-entity camera></a-entity>
         </a-scene>
 	<script type="text/javascript"> 
-            
-            function print(){
-                gltf = document.querySelector('#bowser-model');
-                var scene = document.querySelector('a-scene');
-             	mesh = gltf.getObject3D('mesh'); 
-                console.log(mesh); 
-            }
-            document.getElementById.("model").addEventListener("input",print)
+            gltf = document.querySelector('#bowser-model');
+            var scene = document.querySelector('a-scene');
+            gltf.addEventListener('loaded', function (e) {
+                mesh = gltf.getObject3D('mesh');
+                console.log(mesh)
+            });
            
 	</script>
 
