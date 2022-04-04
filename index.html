@@ -89,6 +89,8 @@
                     mesh.children[8].translateZ(0.01);
                 } else if (oldgear == 3){
                     mesh.children[7].translateZ(-0.01);
+                } else if (oldgear == 4){
+                    mesh.children[7].translateZ(0.01);
                 }
                 
                 if (n == 1){
@@ -97,6 +99,8 @@
                     mesh.children[8].translateZ(-0.01);
                 } else if (n == 3){
                     mesh.children[7].translateZ(0.01);
+                } else if (n == 4){
+                    mesh.children[7].translateZ(-0.01);
                 }
                 oldgear = n;
             }
@@ -210,10 +214,42 @@
                     synchro(3);
                     Interval = setInterval(speed3run,25);
                 }
+                
+                function speed4run(){
+                    mesh = gltf.getObject3D('mesh');
+                    iS = parseFloat(document.getElementById("speed").value)
+                    iS = iS/4;                    
+                    mesh.children[10].rotateZ(iS);
+                    mesh.children[9].rotateZ(-iS/4);
+                    mesh.children[5].rotateZ(iS/4*27/45);
+                    mesh.children[0].rotateZ(iS/4*26/34);
+                    mesh.children[2].rotateZ(iS/4);
+                    mesh.children[1].rotateZ(iS/4*39/33);
+                    mesh.children[3].rotateZ(iS/4*40/32);
+                    mesh.children[16].rotateZ(iS/4*26/20);
+                    mesh.children[4].rotateZ(-iS/4*26/30);
+                    mesh.children[11].rotateZ(iS/4*39/33);
+                    mesh.children[6].rotateZ(iS/4*39/33);
+                    mesh.children[7].rotateZ(iS/4*39/33);
+                    mesh.children[8].rotateZ(iS/4*39/33);
+                    mesh.children[12].rotateZ(iS/4**39/33*1/2.6);
+                }
+                function speed4(){
+                    clearInterval(Interval);                    
+                    document.getElementById("neutral").disabled = false;
+                    document.getElementById("speed1").disabled = false;
+                    document.getElementById("speed2").disabled = false;
+                    document.getElementById("speed3").disabled = false;
+                    document.getElementById("speed4").disabled = true;
+                    synchro(4);
+                    Interval = setInterval(speed4run,25);
+                }
+                
                 main.neutral = neutral;
                 main.speed1 = speed1; 
                 main.speed2 = speed2;                 
                 main.speed3 = speed3;
+                main.speed4 = speed4;
                 
             }
             
@@ -252,7 +288,8 @@
             document.getElementById("neutral").addEventListener("click",neutral);
             document.getElementById("speed1").addEventListener("click",main.speed1);            
             document.getElementById("speed2").addEventListener("click",main.speed2);            
-            document.getElementById("speed3").addEventListener("click",main.speed3);
+            document.getElementById("speed3").addEventListener("click",main.speed3);                        
+            document.getElementById("speed4").addEventListener("click",main.speed4);
         </script>
 
     </body>
