@@ -86,7 +86,7 @@ body {margin:0;}
 
 /* Change the background color of the dropup button when the dropup content is shown */
 .dropup:hover .dropbtn {
-  background-color: #2980B9;
+  background-color: #4d0099;
 }
 .slidecontainer {
   width: 99%;
