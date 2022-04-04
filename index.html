@@ -126,7 +126,8 @@
                 function neutral(){
                     document.getElementById("speed1").disabled = false;                    
                     document.getElementById("speed2").disabled = false;
-                    document.getElementById("speed3").disabled = false;
+                    document.getElementById("speed3").disabled = false;                    
+                    document.getElementById("speed4").disabled = false;
                     clearInterval(Interval);                    
                     synchro(0);
                     Interval = setInterval(neutral1,25);
@@ -156,7 +157,8 @@
                     document.getElementById("neutral").disabled = false;
                     document.getElementById("speed1").disabled = true;
                     document.getElementById("speed2").disabled = false;
-                    document.getElementById("speed3").disabled = false;
+                    document.getElementById("speed3").disabled = false;                    
+                    document.getElementById("speed4").disabled = false;
                     synchro(1);
                     Interval = setInterval(speed1run,25);
                 }
@@ -184,7 +186,8 @@
                     document.getElementById("neutral").disabled = false;
                     document.getElementById("speed1").disabled = false;
                     document.getElementById("speed2").disabled = true;
-                    document.getElementById("speed3").disabled = false;
+                    document.getElementById("speed3").disabled = false;                    
+                    document.getElementById("speed4").disabled = false;
                     synchro(2);
                     Interval = setInterval(speed2run,25);
                 } 
@@ -214,6 +217,7 @@
                     document.getElementById("speed1").disabled = false;
                     document.getElementById("speed2").disabled = false;
                     document.getElementById("speed3").disabled = true;
+                    document.getElementById("speed4").disabled = false;
                     synchro(3);
                     Interval = setInterval(speed3run,25);
                 }
