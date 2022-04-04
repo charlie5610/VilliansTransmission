@@ -39,6 +39,9 @@
               <button class="button" id="speed5"\>
                 5th Gear
             </button>
+              <button class="button" id="speedr"\>
+                Reverse Gear
+            </button>
           </div>
         </div>
         </div>
@@ -99,6 +102,8 @@
                     mesh.children[7].translateZ(0.01);
                 } else if (oldgear == 5){
                     mesh.children[7].translateZ(-0.01);
+                } else if (oldgear == 6){
+                    mesh.children[7].translateZ(0.01);
                 }
                 
                 if (n == 1){
@@ -111,6 +116,8 @@
                     mesh.children[7].translateZ(-0.01);
                 } else if (n == 5){
                     mesh.children[6].translateZ(0.01);
+                } else if (n == 6){
+                    mesh.children[6].translateZ(-0.01);
                 }
                 oldgear = n;
             }
@@ -136,6 +143,7 @@
                     document.getElementById("speed3").disabled = false;                    
                     document.getElementById("speed4").disabled = false;
                     document.getElementById("speed5").disabled = false;
+                    document.getElementById("speedr").disabled = false;
                     clearInterval(Interval);                    
                     synchro(0);
                     Interval = setInterval(neutral1,25);
@@ -168,6 +176,7 @@
                     document.getElementById("speed3").disabled = false;                    
                     document.getElementById("speed4").disabled = false;
                     document.getElementById("speed5").disabled = false;
+                    document.getElementById("speedr").disabled = false;
                     synchro(1);
                     Interval = setInterval(speed1run,25);
                 }
@@ -198,6 +207,7 @@
                     document.getElementById("speed3").disabled = false;                    
                     document.getElementById("speed4").disabled = false;
                     document.getElementById("speed5").disabled = false;
+                    document.getElementById("speedr").disabled = false;
                     synchro(2);
                     Interval = setInterval(speed2run,25);
                 } 
@@ -229,6 +239,7 @@
                     document.getElementById("speed3").disabled = true;
                     document.getElementById("speed4").disabled = false;
                     document.getElementById("speed5").disabled = false;
+                    document.getElementById("speedr").disabled = false;
                     synchro(3);
                     Interval = setInterval(speed3run,25);
                 }
@@ -260,6 +271,7 @@
                     document.getElementById("speed3").disabled = false;
                     document.getElementById("speed4").disabled = true;
                     document.getElementById("speed5").disabled = false;
+                    document.getElementById("speedr").disabled = false;
                     synchro(4);
                     Interval = setInterval(speed4run,25);
                 }
@@ -291,10 +303,41 @@
                     document.getElementById("speed3").disabled = false;
                     document.getElementById("speed4").disabled = false;
                     document.getElementById("speed5").disabled = true;
+                    document.getElementById("speedr").disabled = false;
                     synchro(5);
                     Interval = setInterval(speed5run,25);
                 }
-                
+                function speedrrun(){
+                    mesh = gltf.getObject3D('mesh');
+                    iS = parseFloat(document.getElementById("speed").value)
+                    iS = iS/4;                    
+                    mesh.children[10].rotateZ(iS);
+                    mesh.children[9].rotateZ(-iS/4);
+                    mesh.children[5].rotateZ(iS/4*27/45);
+                    mesh.children[0].rotateZ(iS/4*26/34);
+                    mesh.children[2].rotateZ(iS/4);
+                    mesh.children[1].rotateZ(iS/4*39/33);
+                    mesh.children[3].rotateZ(iS/4*40/32);
+                    mesh.children[16].rotateZ(iS/4*26/20);
+                    mesh.children[4].rotateZ(-iS/4*26/30);
+                    mesh.children[11].rotateZ(iS/4*40/32);
+                    mesh.children[6].rotateZ(iS/4*40/32);
+                    mesh.children[7].rotateZ(iS/4*40/32);
+                    mesh.children[8].rotateZ(iS/4*40/32);
+                    mesh.children[12].rotateZ(iS/4*40/32*1/2.6);
+                }
+                function speedr(){
+                    clearInterval(Interval);                    
+                    document.getElementById("neutral").disabled = false;
+                    document.getElementById("speed1").disabled = false;
+                    document.getElementById("speed2").disabled = false;
+                    document.getElementById("speed3").disabled = false;
+                    document.getElementById("speed4").disabled = false;
+                    document.getElementById("speed5").disabled = false;
+                    document.getElementById("speedr").disabled = true;
+                    synchro(6);
+                    Interval = setInterval(speedrrun,25);
+                }
                 main.neutral = neutral;
                 main.speed1 = speed1; 
                 main.speed2 = speed2;                 
@@ -342,7 +385,8 @@
             document.getElementById("speed2").addEventListener("click",main.speed2);            
             document.getElementById("speed3").addEventListener("click",main.speed3);                        
             document.getElementById("speed4").addEventListener("click",main.speed4);                        
-            document.getElementById("speed5").addEventListener("click",main.speed5);
+            document.getElementById("speed5").addEventListener("click",main.speed5);                        
+            document.getElementById("speedr").addEventListener("click",main.speedr);
         </script>
 
     </body>
