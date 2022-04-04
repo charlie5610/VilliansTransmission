@@ -84,19 +84,19 @@
             function synchro(n){
                 mesh = gltf.getObject3D('mesh');
                 switch(oldgear){
-                    case 1:
+                    case "1":
                         mesh.children[8].translateZ(-0.01);
-                    case 2:
+                    case "2":
                         mesh.children[8].translateZ(0.01);
-                    case 3:
+                    case "3":
                         mesh.children[7].translateZ(-0.01);
                 }
                 switch(n){
-                    case 1:
+                    case "1":
                         mesh.children[8].translateZ(0.01);
-                    case 2:
+                    case "2":
                         mesh.children[8].translateZ(-0.01);
-                    case 3:
+                    case "3":
                         mesh.children[7].translateZ(0.01);
                 }
                 oldgear = n;
