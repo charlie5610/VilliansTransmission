@@ -350,13 +350,17 @@
             
             function hide(){
                 mesh = gltf.getObject3D('mesh');
+                document.getElementById("hide").disabled = true;
+                document.getElementById("show").disabled = false;
                 mesh.children[13].material.visible = false;
                 mesh.children[14].material.visible = false;
                 mesh.children[15].material.visible = false;
             }
             
             function show(){
-                mesh = gltf.getObject3D('mesh');
+                mesh = gltf.getObject3D('mesh');                
+                document.getElementById("hide").disabled = false;
+                document.getElementById("show").disabled = true;
                 mesh.children[13].material.visible = true;
                 mesh.children[14].material.visible = true;
                 mesh.children[15].material.visible = true;
@@ -375,6 +379,8 @@
             }
             
             main();
+            
+            document.getElementById("show").disable = true;
             
             
             document.getElementById("speed").addEventListener("input",sChange);

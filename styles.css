@@ -7,7 +7,7 @@
  display:inline-block;
 }
 .button {
-  background-color: #3498DB;
+  background-color: #6600cc;
   border: none;
   color: white;
   width: 100%;
@@ -43,7 +43,7 @@ body {margin:0;}
       height: 2em;
 }
 .dropbtn {
-  background-color: #3498DB;
+  background-color: #6600cc;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -112,13 +112,13 @@ body {margin:0;}
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #3498DB;
+  background: #6600cc;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #3498DB;
+  background: #6600cc;
   cursor: pointer;
 }
