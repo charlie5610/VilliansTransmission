@@ -87,12 +87,16 @@
                     mesh.children[8].translateZ(-0.01);    
                 } else if (oldgear == 2){
                     mesh.children[8].translateZ(0.01);
+                } else if (oldgear == 3){
+                    mesh.children[7].translateZ(-0.01);
                 }
                 
                 if (n == 1){
                     mesh.children[8].translateZ(0.01);
                 } else if (n == 2){
                     mesh.children[8].translateZ(-0.01);
+                } else if (n == 3){
+                    mesh.children[7].translateZ(0.01);
                 }
                 oldgear = n;
             }
